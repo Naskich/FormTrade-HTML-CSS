@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Hi-tech</title>
+    <style type="text/css">
+        .auto-style21 {
+            height: 20px;
+            width: 730px;
+        }
+        .auto-style22 {
+            width: 730px;
+            height: 76px;
+        }
+        .auto-style23 {
+            width: 730px;
+        }
+        .auto-style24 {
+            width: 730px;
+            height: 32px;
+        }
+        #fn {
+            width: 240px;
+        }
+        #Text1 {
+            width: 240px;
+        }
+        .auto-style28 {
+            width: 100px;
+        }
+        #remarx {
+            margin-left: 2px;
+        }
+        .auto-style29 {
+            width: 100px;
+            height: 20px;
+        }
+        #Text2 {
+            width: 240px;
+        }
+        .auto-style30 {
+            width: 730px;
+            height: 21px;
+        }
+        #Text3 {
+            width: 240px;
+        }
+        #Text4 {
+            width: 245px;
+        }
+        #Text6 {
+            width: 79px;
+        }
+        #Text6 {
+            width: 83px;
+        }
+        #Text5 {
+            width: 245px;
+        }
+        .auto-style2 {
+             margin-left: 100px;
+        }
+    </style>
+  
+</head>
+<body style="height: 328px; width: 398px">
+  
+    <form  action="MAILTO: order@hi-tech.bg " method="post" enctype="text/plain">
+    <table border="1px" style="height:300px; width:400px; color:black; margin-left:425px">
+    <tr>
+        <td class="auto-style21">Име</td>
+         <td class="auto-style29"><input type ="text" required="true" id="fn"/></td>
+  
+    </tr>
+     <tr>
+        <td class="auto-style21">Фамилия</td>
+         <td class="auto-style28"><input type ="text" required="true"  id="Text1"/></td>
+    </tr>
+        <tr>
+            <td class="auto-style21">Град</td>
+            <td class="auto-style28"><input type="text" required="true" id="Text1" /></td>
+        </tr>
+     <tr>
+        <td class="auto-style22" >Адрес<br/>за<br/>доставка</td>
+       <td class="auto-style28"><textarea cols="30" rows="5" id="remarx" placeholder="град,улица,пощенски код" ></textarea></td>
+    
+    </tr>
+        <tr>
+        <td class="auto-style21">Телефон</td>
+         <td class="auto-style29"><input type ="text" required="true" id="Text2"/></td>
+
+    </tr>
+        <tr>
+        <td class="auto-style30">Е-mail</td>
+        <td class="auto-style29"><input type ="text" id="Text3"/></td>
+   
+    </tr>
+        <tr>
+        <td class="auto-style24">Номер на артикул 
+        </td>
+        <td>&nbsp;Първи&nbsp;
+                <input type="tel"required="true" style="width: 50px"/>
+           &nbsp; Втори &nbsp;
+                <input type="tel" style="width: 50px"/> 
+        </td>
+        </tr>
+           <tr>
+        <td class="auto-style24">
+            Име на артикул
+        </td>
+         <td class="auto-style29">
+             <input type ="text" id="Text5" required="true" placeholder="първи арикул"/>
+             <input type ="text" id="Text4"placeholder="втори арикул"/>
+         </td>
+        </tr>
+            <tr>
+        <td class="calculate">
+            <u>КАЛКУЛАТОР</u><br/> попълнете бройката<br/> и единичната <br/>цена
+        </td>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Първи 
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+             &nbsp;&nbsp;&nbsp;&nbsp;Втори <br/>
+             &nbsp;бр.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
+             <input type=text name=sellco style="width: 50px">
+           &nbsp; бр.&nbsp;&nbsp;&nbsp; &nbsp;
+             <input type=text name=buycomm style="width: 50px; margin-left: 1px;">
+             <br />
+&nbsp;Цена&nbsp;&nbsp; &nbsp;
+             <input type=text name=buyco style="width: 50px">
+           &nbsp; Цена&nbsp;
+             <input type=text name=sellcomm style="width: 50px">
+             <br /><br /> Общо 
+             <input type=text name=result style="width: 80px; margin-left: 11px;">
+             &nbsp;
+        </td>
+        </tr>
+           <td colspan=2 align=center>
+               <input type=button name=calc value="Калкулирай поръчката" onClick="javascript: stocks(this.form)">
+          </td>
+       <tr>
+        <td class="auto-style22">Бележки или уточнение</td>
+       <td class="auto-style28"><textarea cols="30" rows="5" id="Textarea1" placeholder=" допълнителна информация"></textarea></td>
+    </tr>
+        <tr class="row1">
+            <td colspan="2" class="auto-style2"> 
+                <button type="submit" name="Submit" value="Submit" onclick="Send">Изпрати</button>&nbsp;&nbsp;
+                <button type="reset" value="reset" id="reset" onclick="calc.display.value=''">Изчисти</button></td>
+        </tr>
+        </table>
+    </form>
+    <script>
+      
+        function round(num) {
+            amount = Math.round(num * Math.pow(10, 2)) / Math.pow(10, 2);
+            amount -= 0;
+            // .99 
+            return (amount == Math.floor(amount)) ? amount + '.00' : ((amount * 10 == Math.floor(amount * 10)) ? amount + '0' : amount);
+        }
+        function dectable() {
+            windowprops = 'personalbar=no,toolbar=no,' +
+            'status=no,scrollbars=yes,location=no,' +
+            'resizable=yes,menubar=no,width=340,height=400';
+            decimalWin = window.open('', 'table', windowprops);
+
+            decimalWin.document.open();
+            decimalWin.document.writeln(text);
+            decimalWin.document.close();
+        }
+        function stocks(form) {
+            buycomm = form.buycomm.value * 1;
+            sellcomm = form.sellcomm.value * 1;
+            buyco = form.buyco.value * 1;
+            sellco = form.sellco.value * 1;
+            result1 = buyco * sellco;
+            result2 = buycomm * sellcomm;
+            result = result2 + result1;
+            form.result.value = result + " лв. ";
+        }
+    </script>
+</body>
+</html>
